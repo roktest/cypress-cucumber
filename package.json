@@ -1,0 +1,15 @@
+{
+  "name": "cypress-cucumber",
+  "version": "1.0.0",
+  "description": "cypress cucumber application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rodrigo katz",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.3.0",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  }
+}
