@@ -1,8 +1,10 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import { loginPage } from "../../models/LoginPage";
 
+
 Given(`the user navigates to {string} home page`, (url)=>{
     cy.visit(url);
+    cy.log(Cypress.env);
 });
 
 When(`user see todo.ly logo`, ()=>{
@@ -27,7 +29,7 @@ When(`user completes full name field with {string}`, (name)=>{
 
 When(`user completes email with {string}`, (email)=>{
     //cy.get("#ctl00_MainContent_SignupControl1_TextBoxEmail").type(email);
-    loginPage.typeEmail(email);
+    loginPage.typeEmail(email + setId() + "@mailinator.com" );
 });
 
 When(`user completes pass with {string}`, (pass)=>{
@@ -60,3 +62,7 @@ When(`it is able to logout`, ()=>{
     //cy.get("#ctl00_HeaderTopControl1_LinkButtonLogout").click();
     loginPage.logout();
 });
+
+function setId() {
+    return Math.floor(Math.random() * (1, 999999) + 1);
+}

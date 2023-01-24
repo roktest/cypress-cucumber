@@ -5,9 +5,9 @@ Feature: todo.ly - user testing
     And user see todo.ly logo
     When user click on sign up free button
     And popup appears
-    And user completes full name field with "mono4"
-    And user completes email with "mono4@mailinator.com"
-    And user completes pass with "mono4"
+    And user completes full name field with "mono"
+    And user completes email with "mono"
+    And user completes pass with "mono"
     And user completes timezone with "Argentina Standard Time" time zone
     And user accepts terms of service
     And user clicks on signup button to make the form submission

@@ -50,7 +50,7 @@ class LoginPage {
     }
 
     checkLeftTablePrecense(){
-        this.loginObject.signUpModal().should("be.visible");
+        this.loginObject.mainTableLeft().should("be.visible");
     }
 
     logout(){
