@@ -26,5 +26,5 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-actions@v5
         with:
-          build: npm install
+          build: npm install cypress @badeball/cypress-cucumber-preprocessor @bahmutov/cypress-esbuild-preprocessor ts-loader
           start: npm run cypress:run
