@@ -1,27 +1,17 @@
 name: Cypress Tests
-
-on: 
-  push:
-    branches:
-      - main
+# github pipeline trigger, when something gets pushed then... 
+on: [push]
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-18.04
-    strategy:
-      fail-fast: false #debuggin param - turn off before deploying to prod
-      matrix:
-        #os: [ubuntu-latest, macos-latest, windows-latest]
-        browsers: [firefox, chrome, edge]
+    runs-on: ubuntu-latest
     steps:
-    # Checkout a Git repository at a particular version
       - name: Checkout
         uses: actions/checkout@v3
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+      #install npm dependencies, cache them correctly
+      #and run all cypress tests
       - name: Cypress run
-        uses: cypress-io/github-action@v5 # use the explicit version number for this action
-        with:                             
-          browser: ${{ matrix.browsers }}
+        uses: cypress-io/github-action@v5.2.0
+        with:
           build: npm install
           start: npm run cypress:run
